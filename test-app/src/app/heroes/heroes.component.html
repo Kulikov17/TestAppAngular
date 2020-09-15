@@ -1,0 +1,22 @@
+<h2>My Heroes</h2>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <button mat-mini-fab color="accent" (click)="add(heroName.value); heroName.value=''">
+    +
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button mat-raised-button color="primary" class="delete" title="delete hero"
+    (click)="delete(hero)">
+      x
+    </button>
+  </li>
+</ul>
